@@ -158,15 +158,6 @@ Sub stock()
                 
                 skipRow = False
                 
-                ' add 1 to the ticker row to go to the next row
-                tRows = tRows + 1
-                
-                ' add to the total volume
-                Total_volume = Total_volume + ws.Cells(row, 7).Value  'grab the total value before change
-            
-                'reset the total to 0 before adding new symbol
-                Total_volume = 0
-                
                 'set the conditional formating in yearly change
                 If yearly_change > 0 Then
                 
@@ -179,6 +170,15 @@ Sub stock()
                     ws.Cells(tRows, 11).Interior.ColorIndex = 3 'set the color to RED if its negative
                     
                 End If
+                
+                ' add 1 to the ticker row to go to the next row
+                tRows = tRows + 1
+                
+                ' add to the total volume
+                Total_volume = Total_volume + ws.Cells(row, 7).Value  'grab the total value before change
+            
+                'reset the total to 0 before adding new symbol
+                Total_volume = 0
             
             Else
                 
